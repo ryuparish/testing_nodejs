@@ -1,0 +1,18 @@
+How to start your local kafka clickstream:
+
+1. Start local zookeeper
+    - Go to kafka directory after downloading
+    - type bin/zookeeper-server-start.sh config/zookeeper.properties
+        * Configure the zookeeper port to your needs
+
+2. Start local Broker
+    - Go to kafka directory after downloading
+    - type bin/kafka-server-start.sh config/server.properties 
+
+3. Start local Consumer (this is where your messages should arrive and be visible)
+    - Go to kafka directory after downloading
+    - type bin/kafka-console-consumer.sh --topic testTopic --bootstrap-server localhost:9092 --from-beginning
+
+4. Start the testing NodeJS application
+    - Go to the testing repository folder
+    - type node app.js
